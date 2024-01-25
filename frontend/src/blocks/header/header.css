@@ -1,0 +1,18 @@
+.header {
+    border-bottom: 1px solid rgb(84, 84, 84, .7);
+    display: flex;
+    justify-content: space-between;
+    margin: 45px 200px 40px;
+}
+
+@media (max-width: 1279px) {
+    .header {
+        margin: 35px 100px 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header {
+        margin: 28px 0 42px;
+    }
+}

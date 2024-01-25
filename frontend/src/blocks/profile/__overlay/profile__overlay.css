@@ -1,0 +1,13 @@
+.profile__overlay {
+    position: relative;
+    height: 120px;
+    width: 120px;
+    opacity: 0;
+    transition: .5s linear;
+}
+
+.profile__overlay:hover {
+    cursor: pointer;
+    opacity: .8;
+    background: rgba(0, 0, 0, 0.80);
+}

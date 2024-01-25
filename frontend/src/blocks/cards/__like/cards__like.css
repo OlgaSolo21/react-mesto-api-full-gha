@@ -1,0 +1,19 @@
+.cards__like {
+    background-image: url("../../../images/likeDisabled.svg");
+    min-width: 22px;
+    height: 19px;
+    display: block;
+    margin: 5px 5px 0;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    opacity: 1;
+    transition: opacity .5s linear;
+    object-fit: cover;
+}
+
+.cards__like:hover {
+    opacity: .5;
+    cursor: pointer;
+}

@@ -1,0 +1,9 @@
+.cards__like-amount {
+    display: flex;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 15px;
+    margin: 3px 6px 0;
+    padding: 0;
+    align-self: center;
+}

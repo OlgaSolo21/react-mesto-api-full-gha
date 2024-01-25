@@ -1,0 +1,23 @@
+.cards__elements {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 282px);
+    /*grid-template-rows: repeat(auto-fit, 361px);*/
+    margin: 0;
+    padding: 0;
+    gap: 20px 17px;
+}
+
+@media (max-width: 1279px) {
+    .cards__elements {
+        justify-content: center;
+        grid-template-columns: repeat(2, 282px);
+    }
+}
+
+
+@media (max-width: 767px) {
+    .cards__elements {
+        grid-template-columns: repeat(1, 282px);
+        gap: 20px;
+    }
+}

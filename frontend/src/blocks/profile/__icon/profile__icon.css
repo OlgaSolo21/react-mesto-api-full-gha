@@ -1,0 +1,14 @@
+.profile__icon {
+    background-image: url("../../../images/EditAvatar.svg");
+    width: 26px;
+    height: 26px;
+    background-color: transparent;
+    display: block;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 47px 47px;
+    padding: 0;
+    cursor: pointer;
+}

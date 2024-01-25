@@ -1,0 +1,11 @@
+.popup__cards {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    position: relative;
+    background-color: transparent;
+    margin: 0;
+    gap: 10px;
+}
