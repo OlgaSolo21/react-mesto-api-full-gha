@@ -1,16 +1,21 @@
 class Api {
-    constructor({url, headers}) {
+    constructor({url}) {
         this._url = url
-        this._headers = headers
     }
 
     //"Можно сделать универсальный метод запроса с проверкой ответа,
     // чтобы не дублировать эту проверку в каждом запросе"//
   //рекомендация ревью и наставника (подробнее в пачке еще в треде, также можно отдельным классом (см ревью))
+
     _request(endpoint, options = {}) {
+        const token = localStorage.getItem('jwt')
+
         return fetch(
             `${ this._url }/${endpoint}`,
-            {headers: this._headers, ...options})
+            {headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`
+                    }, ...options})
             .then(this._handleResponse)
     }
 
@@ -90,11 +95,7 @@ class Api {
 }
 
 const api = new Api({
-    url: 'https://mesto.nomoreparties.co/v1/cohort-77',
-    headers: {
-        authorization: '7f52bf50-52cc-48bd-9c80-c48495da8ea4',
-        'Content-Type': 'application/json'
-    }
+    url: 'http://localhost:3000',
 })
 
 export default api

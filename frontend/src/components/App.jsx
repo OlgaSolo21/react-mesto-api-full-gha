@@ -76,7 +76,7 @@ function App() {
                     if (res) {
                         setIsLoggedIn(true)
                         navigate('/', {replace: true})
-                        setEmailUser(res.data.email)
+                        setEmailUser(res.email)
                     }
                 })
                 .catch(console.error)
@@ -100,7 +100,7 @@ function App() {
     // функционал поддержки лайков и дизлайко
     function handleCardLike(card) {
         // Снова проверяем, есть ли уже лайк на этой карточке
-        const isLiked = card.likes.some(i => i._id === currentUser._id);
+        const isLiked = card.likes.some(id => id === currentUser._id);
 
         // Отправляем запрос в API и получаем обновлённые данные карточки
         api.changeLikeCardStatus(card._id, !isLiked)

@@ -4,7 +4,7 @@
 // Если интересно, можно сделать общий класс BaseApi, чтобы не дублировать метод проверки на  ok
 // и универсальный запрос в Api и Auth.
 
-export const BASE_URL = 'https://auth.nomoreparties.co';
+export const BASE_URL = 'http://localhost:3000';
 
 const handleResponse = (res) => {
     if (res.ok) {
@@ -17,6 +17,7 @@ export const register = (email, password) => {
     return fetch(`${BASE_URL}/signup`, {
         method: 'POST',
         headers: {
+            'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -31,6 +32,7 @@ export const login = (email, password) => {
     return fetch(`${BASE_URL}/signin`, {
         method: 'POST',
         headers: {
+            'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -39,6 +41,10 @@ export const login = (email, password) => {
         })
     })
         .then((res) => handleResponse(res))
+        .then((data) => {
+            localStorage.setItem('jwt', data.token)
+            return data;
+        })
 }
 
 export const getContent = (token) => {

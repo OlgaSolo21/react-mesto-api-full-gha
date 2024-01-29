@@ -4,10 +4,10 @@ import CurrentUserContext from "../contexts/CurrentUserContext.js";
 function Card({card, onCardClick, onCardLike, setCardDel, onCardDeletePopup}) {
     const currentUser = useContext(CurrentUserContext) // подписываемся на контекст current User то есть получает данные о пользователе с сервера
 
-    const isOwn = card.owner._id === currentUser._id; // Определяем, являемся ли мы владельцем текущей карточки
+    const isOwn = card.owner === currentUser._id; // Определяем, являемся ли мы владельцем текущей карточки
     const buttonDeleteCardClassName = `cursor ${isOwn ? 'cards__trash' : ''}` // переменная, которую добавляем в класс корзины
 
-    const isLiked = card.likes.some(i => i._id === currentUser._id); // Определяем, есть ли у карточки лайк, поставленный текущим пользователем
+    const isLiked = card.likes.some(id => id === currentUser._id); // Определяем, есть ли у карточки лайк, поставленный текущим пользователем
     const cardLikeButtonClassName = `cards__like ${isLiked ? 'cards__like_active' : ''}` // Создаём переменную, которую после зададим в `className` для кнопки лайка
 
     const handleCardClick = () => {// открытие на весь экран
