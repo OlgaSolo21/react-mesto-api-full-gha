@@ -95,7 +95,7 @@ class Api {
 }
 
 const api = new Api({
-    url: 'api.mesto.cohort77.nomoredomainsmonster.ru',
+    url: 'https://api.mesto.cohort77.nomoredomainsmonster.ru',
 })
 
 export default api
