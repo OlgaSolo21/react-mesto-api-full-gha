@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.51.203
+IP 158.160.51.203
 
 Frontend https://mesto.cohort77.nomoredomainsmonster.ru
 
