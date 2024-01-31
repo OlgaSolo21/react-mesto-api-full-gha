@@ -1,4 +1,5 @@
 // пишем контроллеры для карточек
+const mongoose = require('mongoose');
 const Card = require('../models/card');
 const BadRequest = require('../errors/BadRequest');
 const NotFoundError = require('../errors/NotFoundError');
@@ -11,7 +12,7 @@ module.exports.createCard = (req, res, next) => {
   Card.create({ name, link, owner })// тут будет также _id новой карточки (см Postman)
     .then((card) => res.status(200).send(card))
     .catch((err) => {
-      if (err.name === 'ValidationError') {
+      if (err instanceof mongoose.Error.ValidationError) {
         next(new BadRequest('Переданы некорректные данные при создании карточки'));
       } else { next(err); }
     });
