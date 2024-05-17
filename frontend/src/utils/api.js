@@ -62,21 +62,6 @@ class Api {
                     method: like ? 'PUT' : 'DELETE' // где like это булевая переменная которая определяется при вызове метода changeLikeCardStatus
                 })
     }
-    // setLikeCardPut(cardId) { // Постановка лайка
-    //     return fetch(`${this._url}/cards/${cardId}/likes`, {
-    //         headers: this._headers,
-    //         method: 'PUT'
-    //     })
-    //         .then(this._handleResponse)
-    // }
-    //
-    // deleteLikeCard(cardId) { // Снятие лайка
-    //     return fetch(`${this._url}/cards/${cardId}/likes`, {
-    //         headers: this._headers,
-    //         method: 'DELETE'
-    //     })
-    //         .then(this._handleResponse)
-    // }
 
     deleteCard(cardId) { // Удалкние карточки с сервера
         return this._request(`cards/${cardId}`, {
@@ -95,7 +80,7 @@ class Api {
 }
 
 const api = new Api({
-    url: 'https://api.mesto.cohort77.nomoredomainsmonster.ru',
+    url: 'https://api.nomoreparties.co',
 })
 
 export default api
