@@ -25,11 +25,7 @@ app.use(express.urlencoded({ extended: true })); // для приёма веб-�
 mongoose.connect(MONGO_URL);
 
 app.use(requestLogger); // подключаем логгер запросов
-app.get('/crash-test', () => {
-  setTimeout(() => {
-    throw new Error('Сервер сейчас упадёт');
-  }, 0);
-});
+
 app.use(router); // все роуты
 
 app.use(errorLogger); // подключаем логгер ошибок

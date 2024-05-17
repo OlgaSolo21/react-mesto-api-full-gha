@@ -1,4 +1,5 @@
 {
+  "homepage": "https://OlgaSolo21.github.io/react-mesto-api-full-gha",
   "name": "mesto-react",
   "private": true,
   "version": "0.0.0",
@@ -9,7 +10,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "npm run build && scp -r ./dist/* mesto_77@158.160.51.203:/home/mesto_77/react-mesto-api-full-gha/frontend"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "react": "^18.2.0",
